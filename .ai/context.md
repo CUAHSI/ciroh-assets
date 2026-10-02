@@ -32,5 +32,7 @@ Bootstrap agent guidance for the repo.
 
 ## Notes
 
+- `resources/NOAA NGEN - Preparing and Executing an NGEN Simulation/` holds a copy of the CUAHSI notebook example (notebook, `prepare.sh`, `restore.sh`, `requirements.txt`, `notes.txt`, `img/`). Source: https://github.com/CUAHSI/notebooks (`develop` branch, `Science Examples/NOAA NGEN - Preparing and Executing an NGEN Simulation`). Downloaded 2026-10-02 via sparse git clone as reference material for the skills.
+
 - Repo state: `LICENSE` (GPLv3), `.gitignore` (Python template), `AGENTS.md`, `.ai/`. One commit on `main`. Nothing committed since.
 - Existing skills at `~/.agents/skills` (e.g. `hpc`, `ospool`, `omfa`, `omfb`, `fair`, `document`) are outside this repo. They may be useful reference for skill format.
