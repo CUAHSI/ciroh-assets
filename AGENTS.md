@@ -2,6 +2,10 @@
 
 Guidance for AI coding agents working in this repository.
 
+## Project Purpose
+
+The purpose of this project is to build a set of AI skills that enable scientists to build hydrologic model simulations.
+
 ## Coding Principles
 
 - Follow the Unix philosophy: write small, focused pieces of code that do one thing well and compose cleanly, rather than monolithic scripts.
