@@ -12,6 +12,7 @@ The purpose of this project is to build a set of AI skills that enable scientist
 - Favor simple, easy-to-understand code over clever or overly compact solutions, even if it's more verbose.
 - Comments are required on non-trivial code and should explain what is being done at a high level (intent/purpose), not restate the code line-by-line.
 - Agents must always ask the user before editing files directly; do not make direct edits without explicit confirmation first.
+- Do not create new git branches unless the user explicitly tells you to.
 
 ## Session context (`.ai/`)
 
