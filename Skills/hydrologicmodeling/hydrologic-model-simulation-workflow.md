@@ -6,6 +6,19 @@ This note distills the repository's NOAA NextGen (NGEN) tutorial into a general 
 
 The concrete example comes from `resources/NOAA NGEN - Preparing and Executing an NGEN Simulation/preparing-and-executing-ngen.ipynb`. That notebook describes a USGS-gaged basin in Alabama, a NextGen hydrofabric subset, meteorological forcing preparation, component configuration, NGEN execution, and comparison of routed flow with USGS observations. The notebook cells are unexecuted, so its described outputs and commands are instructional rather than verified run results.
 
+
+The goal of this skill is to provide high-level, general, guidance for contructing hydrologic simuations in a model-agnostic way.
+
+Your responsibility is to design model simulations, not to run them.
+
+## General instructions
+
+- **Do not produce a work plan before you have all the information you need.**
+- If you need information from the user, ask before proceeding. **Only ask one question at a time.**
+- Don't assume what type of model or modeling framework the user wants.
+
+
+
 ## What a simulation needs
 
 A useful mental model is that a simulation joins five things:

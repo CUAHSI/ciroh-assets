@@ -19,6 +19,19 @@ Develop a model-agnostic hydrologic simulation skill, using the NGEN notebook as
 - [x] Set the convention that each skill has its own subdirectory under root `Skills/`.
 - [ ] Choose the target audience and skill platform/format.
 
+## Active user simulation request (intake in progress)
+
+The skill (`Skills/hydrologicmodeling/hydrologic-model-simulation-workflow.md`) says: ask one question at a time, do not produce a work plan until all needed information is collected, design only (do not run), and do not assume the model.
+
+Answers so far:
+- Objective: compute streamflow at USGS gage 10109000 (believed to be Logan River, Utah; not verified).
+- Model: NGEN.
+- Period: last water year, interpreted as WY2026 (2025-10-01 to 2026-09-30; today is 2026-10-02). - Warm-up: option B, about 3 months (2025-07-01 to 2025-09-30), excluded from evaluation. - Time step: hourly.
+- Evaluation: user does NOT want to evaluate against observed flow at gage 10109000, and has no alternative evidence. Plan for internal checks only (plausible ranges, forcing timing, water balance) and state this limit in the design. Implication: no calibration is possible, so this is an uncalibrated baseline run - Existing data: none. Starting from nothing (domain, forcings, and configuration all need to be created).
+- Runs on: a Mac laptop. The repo's NGEN notebook targets the CIROH 2i2c JupyterHub, so Mac install steps are NOT covered by it and must come from NGEN/NGIAB documentation.
+
+Intake status: user chose to skip the Mac chip / Docker question. Intake treated as complete; a work plan was produced in chat with the Mac install step marked pending. Plan not saved to a file (AGENTS.md: ask before editing).
+
 ## Decisions
 
 - Session context for resuming work lives in `.ai/` (user request). The entry point is `.ai/context.md`.
