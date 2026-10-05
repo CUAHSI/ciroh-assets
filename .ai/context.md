@@ -4,52 +4,43 @@ Read this first when resuming work. Keep it current (see `AGENTS.md`, "Session c
 
 ## Project purpose
 
-Build a set of AI skills that enable scientists to build hydrologic model simulations.
+Build a set of AI skills that enable scientists to build hydrologic model simulations. Provide high-level guidance plus model-specific guidance for specific models and frameworks.
 
 ## Current goal
 
-Develop a model-agnostic hydrologic simulation skill, using the NGEN notebook as an initial example.
+Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as the first model-specific reference.
 
 ## Status
 
-- [x] Created `AGENTS.md` (Coding Principles, Session context, Adding Future Context).
-- [x] Created this file.
-- [x] Recorded the project purpose (user-provided).
-- [x] Distilled the NGEN notebook into a model-agnostic simulation workflow under `Skills/hydrologicmodeling/`.
-- [x] Set the convention that each skill has its own subdirectory under root `Skills/`.
-- [ ] Choose the target audience and skill platform/format.
-
-## Active user simulation request (intake in progress)
-
-The skill (`Skills/hydrologicmodeling/hydrologic-model-simulation-workflow.md`) says: ask one question at a time, do not produce a work plan until all needed information is collected, design only (do not run), and do not assume the model.
-
-Answers so far:
-- Objective: compute streamflow at USGS gage 10109000 (believed to be Logan River, Utah; not verified).
-- Model: NGEN.
-- Period: last water year, interpreted as WY2026 (2025-10-01 to 2026-09-30; today is 2026-10-02). - Warm-up: option B, about 3 months (2025-07-01 to 2025-09-30), excluded from evaluation. - Time step: hourly.
-- Evaluation: user does NOT want to evaluate against observed flow at gage 10109000, and has no alternative evidence. Plan for internal checks only (plausible ranges, forcing timing, water balance) and state this limit in the design. Implication: no calibration is possible, so this is an uncalibrated baseline run - Existing data: none. Starting from nothing (domain, forcings, and configuration all need to be created).
-- Runs on: a Mac laptop. The repo's NGEN notebook targets the CIROH 2i2c JupyterHub, so Mac install steps are NOT covered by it and must come from NGEN/NGIAB documentation.
-
-Intake status: user chose to skip the Mac chip / Docker question. Intake treated as complete; a work plan was produced in chat with the Mac install step marked pending. Plan not saved to a file (AGENTS.md: ask before editing).
+- [x] Created `AGENTS.md` (Project Purpose, Coding Principles, Session context, Adding Future Context).
+- [x] Distilled the NGEN notebook into a model-agnostic workflow.
+- [x] Converted the workflow into a real skill: `skills/hydrologicmodeling/SKILL.md` (frontmatter `name: hydrologicmodeling`, matching the directory).
+- [x] Moved NGEN-specific content into `skills/hydrologicmodeling/references/ngen.md`.
+- [x] Updated `skills/README.md` to list the skill.
+- [ ] Test the skill by running a real intake conversation and check it follows its operating rules.
+- [ ] Add model-specific references for other models as the user chooses them.
 
 ## Decisions
 
-- Session context for resuming work lives in `.ai/` (user request). The entry point is `.ai/context.md`.
-- Finished, reusable skills belong in the repository-root `Skills/` directory, each in its own subdirectory. Do not store skill documents under `.ai/`.
-- `AGENTS.md` was deliberately trimmed to Coding Principles, Session context, and Adding Future Context. Do not re-add the removed sections (status, tooling, commands, layout, conventions, licensing, git) unless asked.
+- Session context for resuming work lives in `.ai/`; the entry point is `.ai/context.md`.
+- Finished skills live in the repository-root `skills/` directory, each in its own subdirectory. Do not store skill documents under `.ai/`.
+- Do not save context from executing the skills (for example a user's simulation details). Only save information about developing the repo (`AGENTS.md` rule).
+- `AGENTS.md` was deliberately trimmed. Do not re-add removed sections (status, tooling, commands, layout, conventions, licensing, git) unless asked.
+- Skill design rules, set by the user in the skill: design simulations and do not run them; do not assume the model; do not produce a work plan before all needed information is gathered; ask one question at a time.
+- The skill file format is `SKILL.md` with `name` and `description` frontmatter; `name` must match the directory name.
+- General guidance stays in `SKILL.md`. Model-specific commands and notes go in `references/<model>.md` and are loaded only after the user picks that model.
 
 ## Open questions
 
-- Which hydrologic models or modeling workflows should the skills target (e.g. SWAT, MODFLOW, WRF-Hydro, HEC-HMS, SUMMA)?
-- Which agent platform and skill format (e.g. `SKILL.md` folders as in `~/.agents/skills`) should the skills use?
-- Who are the target users, and what workflow stages should be covered (data acquisition, setup, calibration, evaluation, documentation)?
-- Which Python tooling (package manager, test runner, linter), if any, is needed?
-- `AGENTS.md` says agents must ask before editing files, but also says to update `.ai/context.md`. Is `.ai/` exempt from the ask-first rule? (Unanswered; I have been updating `.ai/context.md` as the user's earlier instruction to save context.)
+- Zed discovers project-local skills at `.agents/skills/<name>/SKILL.md`, not at `skills/`. Should `skills/` stay as the source of truth with a copy or symlink at `.agents/skills/`, or should skills move? (Not decided; nothing created.)
+- Which other models should get a reference (e.g. SWAT, SUMMA, WRF-Hydro, HEC-HMS, MODFLOW)?
+- Who are the target users, and which workflow stages need deeper guidance (data acquisition, calibration, evaluation, documentation)?
+- Which Python tooling, if any, is needed?
+- Is `.ai/` exempt from `AGENTS.md`'s ask-before-editing rule? (Unanswered; `.ai/context.md` has been updated under the user's instruction to save context.)
 
 ## Notes
-- `Skills/hydrologicmodeling/hydrologic-model-simulation-workflow.md` is the initial outline for a general hydrologic simulation skill. It covers objective/domain definition, input preparation, configuration, execution, verification/evaluation, and reproducibility. It is grounded in the NGEN tutorial but deliberately avoids making NGEN-specific tools universal requirements.
 
-- `resources/NOAA NGEN - Preparing and Executing an NGEN Simulation/` holds a copy of the CUAHSI notebook example (notebook, `prepare.sh`, `restore.sh`, `requirements.txt`, `notes.txt`, `img/`). Source: https://github.com/CUAHSI/notebooks (`develop` branch, `Science Examples/NOAA NGEN - Preparing and Executing an NGEN Simulation`). Downloaded 2026-10-02 via sparse git clone as reference material for the skills.
-
-- Repo state: `LICENSE` (GPLv3), `.gitignore` (Python template), `AGENTS.md`, `.ai/`. One commit on `main`. Nothing committed since.
-- Existing skills at `~/.agents/skills` (e.g. `hpc`, `ospool`, `omfa`, `omfb`, `fair`, `document`) are outside this repo. They may be useful reference for skill format.
+- `resources/NOAA NGEN - Preparing and Executing an NGEN Simulation/` holds a copy of the CUAHSI notebook example (notebook, `prepare.sh`, `restore.sh`, `requirements.txt`, `notes.txt`, `img/`). Source: https://github.com/CUAHSI/notebooks (`develop` branch, `Science Examples/NOAA NGEN - Preparing and Executing an NGEN Simulation`). Downloaded 2026-10-02 via sparse git clone. The notebook is unexecuted and targets the CIROH 2i2c JupyterHub; it does not cover installing NGEN/NGIAB elsewhere.
+- Known issues in the notebook's evaluation code, flagged in `references/ngen.md`: approximate unit conversion (`3.28**3`), time zone stripped without conversion, bias-duration curve divides by observed flow and sorts series independently.
+- The repo's NGEN reference commands come from the notebook and have not been run or verified.
+- Repo: `LICENSE` (GPLv3), `.gitignore` (Python template), `AGENTS.md`, `.ai/`, `skills/`, `resources/`. Work since the initial commit is partly uncommitted; check `git status`.

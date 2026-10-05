@@ -2,4 +2,8 @@
 
 Finished, reusable skills for hydrologic modeling belong in this directory, with each skill in its own subdirectory.
 
-The initial model-agnostic workflow seed is [`hydrologicmodeling/hydrologic-model-simulation-workflow.md`](hydrologicmodeling/hydrologic-model-simulation-workflow.md). The final skill format is still to be decided.
+| Skill | Purpose |
+| --- | --- |
+| [`hydrologicmodeling`](hydrologicmodeling/SKILL.md) | Model-agnostic design of a hydrologic model simulation. Model-specific notes are in its `references/` folder (currently NGEN). |
+
+Each skill is a `SKILL.md` file with `name` and `description` frontmatter, where `name` matches the directory name.

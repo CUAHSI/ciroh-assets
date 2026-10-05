@@ -4,7 +4,7 @@ Guidance for AI coding agents working in this repository.
 
 ## Project Purpose
 
-The purpose of this project is to build a set of AI skills that enable scientists to build hydrologic model simulations.
+The purpose of this project is to build a set of AI skills that enable scientists to build hydrologic model simulations. It should provide both high-level guidance as well as more specific guidance when asked for working with specific models and frameworks.
 
 ## Coding Principles
 
@@ -16,7 +16,7 @@ The purpose of this project is to build a set of AI skills that enable scientist
 
 ## Session context (`.ai/`)
 
-Agents must persist any context needed to resume work in a later session in the `.ai/` folder.
+Agents must persist any context needed to resume work in a later session in the `.ai/` folder. Agents should only save information related to the development of content within the repository, they should not save contexts when executing the skills in the repository.
 
 - **At the start of a session:** read `.ai/context.md` (if it exists) and any files it references before doing other work.
 - **During and at the end of a session:** update `.ai/context.md` with anything a fresh agent would need to continue. This includes:
