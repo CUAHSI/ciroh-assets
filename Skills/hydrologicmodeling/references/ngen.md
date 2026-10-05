@@ -16,4 +16,6 @@ The following files support this skill
 | --- | --- | --- |
 | Forcing | forcing/forcing.md | Additional information about meteorological forcing data. |
 | Hydrofabric | hydrofabric/hydrofabric.md | Additional information about the NGEN Hydrofabric. |
-| Models | models/models.md | Additional information about NextGen models. |
+| Models | models/cfe.md | Reference for the CFE (Conceptual Functional Equivalent) model. |
+| Models | models/sloth.md | Reference for SLoTH (Simple Logical Tautology Handler), a utility module that supplies constant or echoed values to other modules. |
+| Models | models/noah-owp.md | Reference for Noah-OWP-Modular, a refactored Noah-MP land surface model (snow, energy balance, ET, soil water). |

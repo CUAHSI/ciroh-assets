@@ -17,6 +17,10 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 - [x] Converted the workflow into a real skill: `skills/hydrologicmodeling/SKILL.md` (frontmatter `name: hydrologicmodeling`, matching the directory).
 - [x] Moved NGEN-specific content into `skills/hydrologicmodeling/references/ngen.md`.
 - [x] Updated `skills/README.md` to list the skill.
+- [x] Added `skills/hydrologicmodeling/references/models/cfe.md` (CFE reference, from the NOAA-OWP/cfe README, MODEL.md, INSTALL.md and `src/bmi_cfe.c`; commands not run). Inputs (BMI variables, forcing file, config keys, defaults, time step) and Outputs (15 BMI variables) were populated from `bmi_cfe.c` on 2026-10-05. `cfe.c` and `configs/` examples have not been read.
+- [x] `references/ngen.md` Supporting Files table points Models to `models/cfe.md`.
+- [x] Added `skills/hydrologicmodeling/references/models/sloth.md` (SLoTH reference, from NOAA-OWP/SLoTH README, INSTALL.md, CHANGELOG.md, `include/sloth.hpp`, `src/sloth.cpp`, read 2026-10-05; build not run). `ngen.md` Supporting Files table lists it.
+- [x] Added `skills/hydrologicmodeling/references/models/noah-owp.md` (Noah-OWP-Modular reference, read 2026-10-05 from README, INSTALL.md, docs/changelog.md, `bmi/bmi_noahowp.f90`, `src/NamelistRead.f90`, `src/OptionsType.f90`, `run/namelist.input`). Follows the 8-section structure without maturity, open-items, or build sections. Other `src/` process modules and `parameters/*.TBL` were not read, so Formulation is from file names and option comments. `ngen.md` Supporting Files table lists it.
 - [ ] Test the skill by running a real intake conversation and check it follows its operating rules.
 - [ ] Add model-specific references for other models as the user chooses them.
 
@@ -29,6 +33,7 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 - Skill design rules, set by the user in the skill: design simulations and do not run them; do not assume the model; do not produce a work plan before all needed information is gathered; ask one question at a time.
 - The skill file format is `SKILL.md` with `name` and `description` frontmatter; `name` must match the directory name.
 - General guidance stays in `SKILL.md`. Model-specific commands and notes go in `references/<model>.md` and are loaded only after the user picks that model.
+- All model references (`references/models/<model>.md`) follow the section structure of `cfe.md` and `sloth.md`, minus maturity notes, open items, and build/installation instructions (the user does not want those). The structure is defined in `AGENTS.md`, "Model reference files". Do not deviate without asking the user. `cfe.md` and `sloth.md` still contain the dropped sections until the user decides whether to remove them.
 
 ## Open questions
 
@@ -37,6 +42,13 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 - Who are the target users, and which workflow stages need deeper guidance (data acquisition, calibration, evaluation, documentation)?
 - Which Python tooling, if any, is needed?
 - Is `.ai/` exempt from `AGENTS.md`'s ask-before-editing rule? (Unanswered; `.ai/context.md` has been updated under the user's instruction to save context.)
+
+## Pending cleanup (raise with the user)
+
+- Git still tracks `Skills/` paths; the on-disk rename to `skills/` needs `git mv` (sandbox cannot write git metadata).
+- `SKILL.md` rule 2 ("ask which model") conflicts with the intake order where the model is optional and last.
+- `references/forcing/forcing.md` and `references/hydrofabric/hydrofabric.md` do not exist; `references/ngen/` is empty.
+- A complete second run of the skill through to a design would make a good example.
 
 ## Notes
 

@@ -29,6 +29,27 @@ Agents must persist any context needed to resume work in a later session in the 
 - **Keep it current:** edit or remove stale entries instead of only appending. Keep entries short and factual.
 - **No secrets:** never write credentials, tokens, or private data into `.ai/`. Its contents are tracked by git unless the user says otherwise.
 
+## Model reference files
+
+Every model-specific reference lives in `skills/hydrologicmodeling/references/models/<model>.md`. Use the structure of `cfe.md` and `sloth.md` for all models. Use these sections in this order, and keep the same heading names:
+
+1. **Title and intro.** `# <MODEL> reference (<full name>)`, then one paragraph saying when to load the file (only after the user has chosen a design that includes the model) and which other files it supplements.
+2. **Source and reliability.** The repository URL, branch, and date read. List each file actually read. List what was not read and so is not covered. Mark interpretation as **(inference)**.
+3. **What <MODEL> is.** A short bullet description: purpose, language, build tooling, and whether it implements BMI.
+4. **Software License.** The license name.
+5. **Formulation.** Process models only. Numbered list of the processes, taken from the model documentation. Omit this for utility modules.
+6. **Inputs.** Subsections as applicable: run setup, BMI input variables (table with units), forcing, configuration file keys (required, scheme-dependent, optional with code defaults), calibration parameters, and time step.
+7. **Outputs.** A table of output variables with units and meaning, and a note on any unit or conversion issue (for example depth versus discharge).
+8. **How to use this in a design.** Bullets of guidance for the skill: scale, baseline parameters, snow, ET, time step, platform, and anything model-specific. State consequential assumptions the user must confirm.
+
+Do not include maturity notes, open-items lists, or build/installation instructions in these files.
+
+Rules for these files:
+
+- Read the code or docs before stating a fact. Do not invent parameter names, defaults, supported time steps, or platform support. Mark anything unverified as **(inference)** or state that it is unverified where it appears.
+- Add a row for each new model file to the Supporting Files table in the framework reference (for example `references/ngen.md`).
+- Keep each file focused on that one model. Link to other references instead of repeating them.
+
 ## Adding Future Context
 
 - Save durable project context/notes under `.ai/` rather than scattering new markdown files across the repo.
