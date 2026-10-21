@@ -51,6 +51,8 @@ A simulation joins five things:
 
 Names and file formats differ by model. The chosen model's documentation and data conventions always control.
 
+Use the canonical terms in [references/glossary.md](references/glossary.md) and check the user's wording against it. Resolved terms for one simulation go in the design, not the glossary.
+
 ## Design workflow
 
 After intake is complete, produce the design as the following stages. For each stage give the decisions to make, the checks to perform, and a checkpoint. Use the user's actual answers; do not leave generic placeholders where you have information.
