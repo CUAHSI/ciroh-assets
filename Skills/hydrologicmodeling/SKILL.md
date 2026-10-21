@@ -52,6 +52,8 @@ The model is a node in the tree. Once chosen, load its reference and ask the bra
 
 If a date or term is ambiguous (for example "last water year"), state your interpretation and ask the user to correct it.
 
+Use the canonical terms in [references/glossary.md](references/glossary.md) and check the user's wording against it. Resolved terms for one simulation go in the design, not the glossary.
+
 ## Ending the interview
 
 The interview ends when no branch has an open question. Then:
