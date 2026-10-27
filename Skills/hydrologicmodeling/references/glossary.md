@@ -6,16 +6,16 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 
 ## Spatial representation
 
-| Term              | Definition                                                                                                            | Avoid                                                                    |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Domain            | The area, spatial units, and connections a simulation covers.                                                         | "Region", "area" when the model units matter                             |
-| Basin (watershed) | The land area draining to a single outlet.                                                                            | "Catchment" for a whole basin; "drainage" alone                          |
-| Catchment         | A single model spatial unit that drains to one outlet point. A basin is made of one or more catchments.               | "Basin", "subbasin", "polygon" as synonyms                               |
-| Outlet            | The point where a basin or catchment drains.                                                                          | "Pour point", "mouth" without saying which                               |
-| Gage              | A station that measures a quantity (usually streamflow) at a location. A gage is a location anchor, not an objective. | "Gauge" (spelling varies; pick one), "station" for a non-measuring point |
-| Reach             | A segment of river channel between two connection points.                                                             | "Stream", "river" for a single segment                                   |
-| Spatial resolution | The size of the spatial unit the model resolves, such as grid cell size or typical catchment area. State the units.   | "Scale", "detail" without a size                                         |
-| Spatial discretization (lumped or gridded) | How the domain is divided. Lumped: one unit represents the whole basin. Gridded (distributed): a regular grid of cells, each simulated separately. | "Distributed" alone, since it can also mean catchment-based units |
+| Term                                       | Definition                                                                                                                                                                                 | Avoid                                                                    |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| Domain                                     | The area, spatial units, and connections a simulation covers.                                                                                                                              | "Region", "area" when the model units matter                             |
+| Basin (watershed)                          | The land area draining to a single outlet. A user may name one by a Hydrologic Unit Code (HUC, a US-specific nested ID); confirm the HUC level (for example HUC8 or HUC12) and the outlet. | "Catchment" for a whole basin; "drainage" alone                          |
+| Catchment                                  | A single model spatial unit that drains to one outlet point. A basin is made of one or more catchments.                                                                                    | "Basin", "subbasin", "polygon" as synonyms                               |
+| Outlet                                     | The point where a basin or catchment drains.                                                                                                                                               | "Pour point", "mouth" without saying which                               |
+| Gage                                       | A station that measures a quantity (usually streamflow) at a location. A gage is a location anchor, not an objective.                                                                      | "Gauge" (spelling varies; pick one), "station" for a non-measuring point |
+| Reach                                      | A segment of river channel between two connection points.                                                                                                                                  | "Stream", "river" for a single segment                                   |
+| Spatial resolution                         | The size of the spatial unit the model resolves, such as grid cell size or typical catchment area. State the units.                                                                        | "Scale", "detail" without a size                                         |
+| Spatial discretization (lumped or gridded) | How the domain is divided. Lumped: one unit represents the whole basin. Gridded (distributed): a regular grid of cells, each simulated separately.                                         | "Distributed" alone, since it can also mean catchment-based units        |
 
 ## Inputs and states
 
@@ -40,13 +40,13 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 
 ## Time
 
-| Term              | Definition                                                                                                 | Avoid                                        |
-| ----------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| Simulation period | Start and end times of the run, including warm-up.                                                         | "Dates" without saying which                 |
-| Evaluation period | The part of the simulation period used to judge results.                                                   | "Run period"                                 |
-| Time step (temporal resolution)         | The interval at which the model advances.                                                                  | "Resolution" for time alone                  |
-| Time zone         | The time convention of timestamps. Always state it; convert, do not strip it.                              | "Local time" without a zone                  |
-| Water year        | A 12-month period for hydrologic accounting. Its start month depends on the convention and must be stated. | "Last year", "last water year" without dates |
+| Term                            | Definition                                                                                                 | Avoid                                        |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Simulation period               | Start and end times of the run, including warm-up.                                                         | "Dates" without saying which                 |
+| Evaluation period               | The part of the simulation period used to judge results.                                                   | "Run period"                                 |
+| Time step (temporal resolution) | The interval at which the model advances.                                                                  | "Resolution" for time alone                  |
+| Time zone                       | The time convention of timestamps. Always state it; convert, do not strip it.                              | "Local time" without a zone                  |
+| Water year                      | A 12-month period for hydrologic accounting. Its start month depends on the convention and must be stated. | "Last year", "last water year" without dates |
 
 ## Evaluation
 
