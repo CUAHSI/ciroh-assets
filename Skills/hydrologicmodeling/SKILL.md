@@ -48,7 +48,7 @@ Work through these top-level branches. Skip any the user has already answered, a
 
 ### Model
 
-The model is a node in the tree. Once chosen, load its reference and ask the branches it unlocks. These may include formulations, routing, snow, and evapotranspiration, and the reference defines which apply. Confirm the model fits the objective in processes, spatial representation, scale, data needs, and compute cost.
+The model is a node in the tree. Once chosen, load its reference and ask the branches it unlocks. These may include process models, routing, snow, and evapotranspiration, and the reference defines which apply. Confirm the model fits the objective in processes, spatial representation, scale, data needs, and compute cost.
 
 If a date or term is ambiguous (for example "last water year"), state your interpretation and ask the user to correct it.
 
