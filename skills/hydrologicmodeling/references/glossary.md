@@ -62,6 +62,6 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 
 ## Workflow
 
-| Term  | Definition                                                                                                       | Avoid                                                            |
-| ----- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Phase | One part of the modeling workflow, run by its own skill, that ends in a report the next phase reads.             | "Stage" (also means river water level), "step" (also time step) |
+| Term  | Definition                                                                                           | Avoid                                                           |
+| ----- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Phase | One part of the modeling workflow, run by its own skill, that ends in a report the next phase reads. | "Stage" (also means river water level), "step" (also time step) |

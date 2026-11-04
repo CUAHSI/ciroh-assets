@@ -25,20 +25,21 @@ Interview a scientist until every decision needed to design a hydrologic simulat
 7. **Respect the user's decisions.** If the user declines something, record it as their decision, state the consequence plainly, and move on.
 8. **Do not save the user's simulation details** into `.ai/` or anywhere in the repository unless the user asks you to save the design.
 9. **Mark scope.** Say which statements apply to any model and which only to the chosen one.
+10. **Keep internal terms internal.** Do not say "design tree" or "branch" to the user; say "topic" instead.
 
 ## The design tree
 
 Work through these top-level branches. Skip any the user has already answered, and ask a branch's follow-ups only when its answer makes them relevant. A skipped question stays open and is listed as an open item.
 
-| Branch | Decide |
-| --- | --- |
-| Objective | The process and question (streamflow at a gage, runoff, soil moisture, flood routing). A gage is a location anchor, not an objective. |
-| Study area | Basin, gage, outlet, or region, and how upstream units are determined. |
-| Period | Start and end dates, and warm-up (none, short, full cycle). |
-| Time | Time step and the time zone of any data the user brings. |
-| Existing materials | Domain, forcing, parameters, or configuration the user already has. |
-| Intent | Where it will run, how results will be judged, and baseline run or calibration. |
-| Model | The user's choice. Do not assume one. Ask what they need from a model and compare options against the objective if they are unsure. |
+| Branch             | Decide                                                                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Objective          | The process and question (streamflow at a gage, runoff, soil moisture, flood routing). A gage is a location anchor, not an objective. |
+| Study area         | Basin, gage, outlet, or region, and how upstream units are determined.                                                                |
+| Period             | Start and end dates, and warm-up (none, short, full cycle).                                                                           |
+| Time               | Time step and the time zone of any data the user brings.                                                                              |
+| Existing materials | Domain, forcing, parameters, or configuration the user already has.                                                                   |
+| Intent             | Where it will run, how results will be judged, and baseline run or calibration.                                                       |
+| Model              | The user's choice. Do not assume one. Ask what they need from a model and compare options against the objective if they are unsure.   |
 
 ### Intent
 
@@ -74,8 +75,8 @@ Do not produce a work plan before the user confirms. After confirmation, write t
 
 Load a reference only after the user has chosen that model.
 
-| Model | Reference |
-| --- | --- |
+| Model                                                | Reference            |
+| ---------------------------------------------------- | -------------------- |
 | NOAA NextGen (NGEN) with the NGIAB data preprocessor | `references/ngen.md` |
 
 If the user's model has no reference, rely on the general tree, ask the user for the model's documentation, and do not invent commands.
