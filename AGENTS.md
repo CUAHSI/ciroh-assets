@@ -50,7 +50,25 @@ Rules for these files:
 - Add a row for each new model file to the Supporting Files table in the framework reference (for example `references/ngen.md`).
 - Keep each file focused on that one model. Link to other references instead of repeating them.
 
+## Testing the skill
+
+When asked to test the `hydrologicmodeling` skill, read `Skills/hydrologicmodeling/SKILL.md` and use only content inside `Skills/hydrologicmodeling/`. Do not reference anything outside that directory unless the user says to.
+
 ## Adding Future Context
 
 - Save durable project context/notes under `.ai/` rather than scattering new markdown files across the repo.
 - Update this file (`AGENTS.md`) directly whenever new standing instructions or conventions are established for this repository.
+
+## Agent skills
+
+### Issue tracker
+
+Jira (Objective CAM-1053) via `acli`; code and PRs on GitHub via `gh`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context. See `docs/agents/domain.md`.
