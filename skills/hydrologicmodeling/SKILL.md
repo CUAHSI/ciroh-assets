@@ -68,7 +68,7 @@ The interview ends when no branch has an open question. Then:
 2. State the limits that apply to any result (for example uncalibrated, unvalidated, short warm-up, unverified data coverage).
 3. Ask the user to confirm the summary.
 
-Do not produce a work plan before the user confirms. Offer to save the design to a file; do not write it without confirmation.
+Do not produce a work plan before the user confirms. After confirmation, write the report using [references/report-template.md](references/report-template.md), offer to save it, and do not write the file without a second confirmation.
 
 ## Model-specific references
 
