@@ -52,7 +52,7 @@ Rules for these files:
 
 ## Testing the skill
 
-When asked to test the `hydrologicmodeling` skill, read `skills/hydrologicmodeling/SKILL.md` and use only content inside `skills/hydrologicmodeling/`. Do not reference anything outside that directory unless the user says to.
+When asked to test a skill, read `skills/<skill>/SKILL.md` and use only content inside `skills/<skill>/`. Do not reference anything outside that directory unless the user says to. For a stage after the first, the input is the previous stage's report. Test each stage skill as it is built, and rerun at least one stage transcript after changing a shared reference.
 
 ## Adding Future Context
 
