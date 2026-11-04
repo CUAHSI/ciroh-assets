@@ -59,3 +59,9 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 | Validation                           | Checking results against observations not used in calibration.                                  | "Verification" as a synonym              |
 | Verification (of inputs and outputs) | Checks that data are structurally and physically plausible.                                     | "Validation"                             |
 | Unit conversion                      | Changing quantity units (for example depth per time step to discharge). State the factors used. | "Scaling"                                |
+
+## Workflow
+
+| Term  | Definition                                                                                                       | Avoid                                                            |
+| ----- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Phase | One part of the modeling workflow, run by its own skill, that ends in a report the next phase reads.             | "Stage" (also means river water level), "step" (also time step) |
