@@ -52,7 +52,7 @@ Rules for these files:
 
 ## Testing the skill
 
-When asked to test the `hydrologicmodeling` skill, read `Skills/hydrologicmodeling/SKILL.md` and use only content inside `Skills/hydrologicmodeling/`. Do not reference anything outside that directory unless the user says to.
+When asked to test the `hydrologicmodeling` skill, read `skills/hydrologicmodeling/SKILL.md` and use only content inside `skills/hydrologicmodeling/`. Do not reference anything outside that directory unless the user says to.
 
 ## Adding Future Context
 
