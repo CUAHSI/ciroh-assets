@@ -68,7 +68,7 @@ The interview ends when no branch has an open question. Then:
 2. State the limits that apply to any result (for example uncalibrated, unvalidated, short warm-up, unverified data coverage).
 3. Ask the user to confirm the summary.
 
-Do not produce a work plan before the user confirms. After confirmation, write the report using [references/report-template.md](references/report-template.md), offer to save it, and do not write the file without a second confirmation.
+Do not produce a work plan before the user confirms. After confirmation, write the report using [references/report-template.md](references/report-template.md), which also defines when it may be saved. Each design-tree branch above becomes Settings rows in the report, and the limits from step 2 go in its Limits to state section.
 
 ## Model-specific references
 
