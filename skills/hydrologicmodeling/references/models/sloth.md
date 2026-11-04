@@ -1,6 +1,6 @@
 # SLoTH reference (Simple Logical Tautology Handler)
 
-Load this only after the user has chosen a design that uses a multi-module formulation in the NextGen (NGEN) framework, or another BMI framework, where one module needs an input that nothing else provides. It supplements the general workflow in `../../SKILL.md`, the NGEN notes in `../ngen.md`, and the CFE notes in `cfe.md`.
+Load this only after the user has chosen a design that uses a multi-module formulation in the NextGen (NGEN) framework, or another BMI framework, where one module needs an input that nothing else provides. It supplements the general workflow in `../../SKILL.md`, the NGEN notes in `../ngen.md`, and the CFE notes in `cfe.md`. Framework terms are defined in [../framework-glossary.md](../framework-glossary.md).
 
 ## Source and reliability
 

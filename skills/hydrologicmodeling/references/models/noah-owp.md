@@ -1,6 +1,6 @@
 # Noah-OWP-Modular reference (Noah-OWP-Modular land surface model)
 
-Load this only after the user has chosen a design that includes Noah-OWP-Modular, either standalone or as a module in the NextGen (NGEN) framework. It supplements the general workflow in `../../SKILL.md`, the NGEN notes in `../ngen.md`, and the CFE notes in `cfe.md`, which it is commonly paired with.
+Load this only after the user has chosen a design that includes Noah-OWP-Modular, either standalone or as a module in the NextGen (NGEN) framework. It supplements the general workflow in `../../SKILL.md`, the NGEN notes in `../ngen.md`, and the CFE notes in `cfe.md`, which it is commonly paired with. Framework terms are defined in [../framework-glossary.md](../framework-glossary.md).
 
 ## Source and reliability
 

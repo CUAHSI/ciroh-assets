@@ -1,6 +1,6 @@
 # CFE reference (Conceptual Functional Equivalent)
 
-Load this only after the user has chosen a design that includes the CFE model, either standalone or as the runoff component in the NextGen (NGEN) framework. It supplements the general workflow in `../../SKILL.md` and the NGEN notes in `../ngen.md`.
+Load this only after the user has chosen a design that includes the CFE model, either standalone or as the runoff component in the NextGen (NGEN) framework. It supplements the general workflow in `../../SKILL.md` and the NGEN notes in `../ngen.md`. Framework terms are defined in [../framework-glossary.md](../framework-glossary.md).
 
 ## Source and reliability
 
