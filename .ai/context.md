@@ -8,7 +8,9 @@ Build a set of AI skills that enable scientists to build hydrologic model simula
 
 ## Current goal
 
-Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as the first model-specific reference.
+Split the single `hydrologicmodeling` skill into a staged workflow of linked grilling-style skills (Jira Epic CAM-1552, under Objective CAM-1053). Each stage interviews the user, then writes a templated report that is the input to the next stage.
+
+Provisional stages: (1) conceptual model scenario setup (domain, period, time step, existing materials, intent, process representation from the Perceptual Model project; resource not yet provided); (2) model, framework and physics selection; (3) forcing and data; (4) compute and execution plan.
 
 ## Status
 
@@ -21,12 +23,16 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 - [x] `references/ngen.md` Supporting Files table points Models to `models/cfe.md`.
 - [x] Added `skills/hydrologicmodeling/references/models/sloth.md` (SLoTH reference, from NOAA-OWP/SLoTH README, INSTALL.md, CHANGELOG.md, `include/sloth.hpp`, `src/sloth.cpp`, read 2026-10-05; build not run). `ngen.md` Supporting Files table lists it.
 - [x] Added `skills/hydrologicmodeling/references/models/noah-owp.md` (Noah-OWP-Modular reference, read 2026-10-05 from README, INSTALL.md, docs/changelog.md, `bmi/bmi_noahowp.f90`, `src/NamelistRead.f90`, `src/OptionsType.f90`, `run/namelist.input`). Follows the 8-section structure without maturity, open-items, or build sections. Other `src/` process modules and `parameters/*.TBL` were not read, so Formulation is from file names and option comments. `ngen.md` Supporting Files table lists it.
-- [ ] Test the skill by running a real intake conversation and check it follows its operating rules.
+- [x] CAM-1497 to CAM-1499 (Epic CAM-1496, Done): shared glossary, model-agnostic glossary, grilling interview core (PRs #8, #9, #12, #13, #14).
+- [x] CAM-1504 content merged (PR #15): lumped/gridded/resolution/model steps in the Model branch, `references/framework-glossary.md`, NGEN terms in `ngen.md`; `Skills/` renamed `skills/`; worked example moved to `resources/examples/`. The Jira story stays open under CAM-1552 to be reworded for the staged design.
+- [ ] CAM-1552 stories: CAM-1500 challenge and escape-hatch (shared across stages), CAM-1501 report template and hand-off contract (do first), CAM-1502 worked example per stage, CAM-1503 manual transcript test, CAM-1504 model selection as stage 2. Stories still to create: the split into stage skills, Perceptual Model content, forcing and compute stages.
 - [ ] Add model-specific references for other models as the user chooses them.
 
 ## Decisions
 
 - Session context for resuming work lives in `.ai/`; the entry point is `.ai/context.md`.
+- Issues are tracked in Jira (project CAM, `acli`), not GitHub issues; GitHub is for code and PRs. See `docs/agents/issue-tracker.md`.
+- The workflow is staged: one skill directory per stage, each producing a templated report consumed by the next. Challenge/escape-hatch behavior, glossaries and model references are written once and shared, not copied per stage. Next: define the report template first, then split the skill.
 - Finished skills live in the repository-root `skills/` directory, each in its own subdirectory. Do not store skill documents under `.ai/`.
 - Do not save context from executing the skills (for example a user's simulation details). Only save information about developing the repo (`AGENTS.md` rule).
 - `AGENTS.md` was deliberately trimmed. Do not re-add removed sections (status, tooling, commands, layout, conventions, licensing, git) unless asked.
@@ -38,6 +44,7 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 ## Open questions
 
 - Zed discovers project-local skills at `.agents/skills/<name>/SKILL.md`, not at `skills/`. Should `skills/` stay as the source of truth with a copy or symlink at `.agents/skills/`, or should skills move? (Not decided; nothing created.)
+- Final names for the stages and skill directories, and the report file format.
 - Which other models should get a reference (e.g. SWAT, SUMMA, WRF-Hydro, HEC-HMS, MODFLOW)?
 - Who are the target users, and which workflow stages need deeper guidance (data acquisition, calibration, evaluation, documentation)?
 - Which Python tooling, if any, is needed?
@@ -45,8 +52,8 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 
 ## Pending cleanup (raise with the user)
 
-- Git still tracks `Skills/` paths; the on-disk rename to `skills/` needs `git mv` (sandbox cannot write git metadata).
-- `SKILL.md` rule 2 ("ask which model") conflicts with the intake order where the model is optional and last.
+- `.ai/notes/grilling-skill-spec.md` is a pre-implementation spec for the single skill; treat as historical until reconciled with the staged design.
+- `resources/examples/logan-river-streamflow.md` still shows the older interview style (CAM-1502).
 - `references/forcing/forcing.md` and `references/hydrofabric/hydrofabric.md` do not exist; `references/ngen/` is empty.
 - A complete second run of the skill through to a design would make a good example.
 
@@ -55,4 +62,4 @@ Develop and refine the model-agnostic hydrologic simulation skill, with NGEN as 
 - `resources/NOAA NGEN - Preparing and Executing an NGEN Simulation/` holds a copy of the CUAHSI notebook example (notebook, `prepare.sh`, `restore.sh`, `requirements.txt`, `notes.txt`, `img/`). Source: https://github.com/CUAHSI/notebooks (`develop` branch, `Science Examples/NOAA NGEN - Preparing and Executing an NGEN Simulation`). Downloaded 2026-10-02 via sparse git clone. The notebook is unexecuted and targets the CIROH 2i2c JupyterHub; it does not cover installing NGEN/NGIAB elsewhere.
 - Known issues in the notebook's evaluation code, flagged in `references/ngen.md`: approximate unit conversion (`3.28**3`), time zone stripped without conversion, bias-duration curve divides by observed flow and sorts series independently.
 - The repo's NGEN reference commands come from the notebook and have not been run or verified.
-- Repo: `LICENSE` (GPLv3), `.gitignore` (Python template), `AGENTS.md`, `.ai/`, `skills/`, `resources/`. Work since the initial commit is partly uncommitted; check `git status`.
+- Repo: `LICENSE` (GPLv3), `.gitignore` (Python template), `AGENTS.md`, `.ai/`, `skills/`, `resources/`, `docs/agents/`.
