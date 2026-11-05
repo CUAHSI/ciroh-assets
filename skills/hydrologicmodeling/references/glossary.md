@@ -19,14 +19,14 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 
 ## Inputs and states
 
-| Term               | Definition                                                                                                                      | Avoid                                                     |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| Forcing            | Time-varying meteorological input that drives the model, such as precipitation and temperature.                                 | "Weather data", "input data" when forcing is meant        |
-| Boundary condition | A value imposed at the edge of the domain, such as inflow from upstream.                                                        | "Forcing" for static or spatial-edge values               |
-| Static attribute   | A time-invariant property of a unit, such as area, slope, or soil class.                                                        | "Forcing", "constant"                                     |
-| Parameter          | A value that controls how a process behaves. It may be calibrated, defaulted, or derived from attributes.                       | "Setting", "variable"                                     |
-| State              | A stored quantity that evolves during the run, such as soil moisture.                                                           | "Parameter", "variable"                                   |
-| Initial condition  | The state values at the start of the simulation.                                                                                | "Starting data", "defaults"                               |
+| Term               | Definition                                                                                                                      | Avoid                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Forcing            | Time-varying meteorological input that drives the model, such as precipitation and temperature.                                 | "Weather data", "input data" when forcing is meant                                                 |
+| Boundary condition | A value imposed at the edge of the domain, such as inflow from upstream.                                                        | "Forcing" for static or spatial-edge values                                                        |
+| Static attribute   | A time-invariant property of a unit, such as area, slope, or soil class.                                                        | "Forcing", "constant"                                                                              |
+| Parameter          | A value that controls how a process behaves. It may be calibrated, defaulted, or derived from attributes.                       | "Setting", "variable"                                                                              |
+| State              | A stored quantity that evolves during the run, such as soil moisture.                                                           | "Parameter", "variable"                                                                            |
+| Initial condition  | The state values at the start of the simulation.                                                                                | "Starting data", "defaults"                                                                        |
 | Spin-up            | A period run before the evaluation period so states can adjust away from the initial conditions. Results from it are discarded. | "Warm-up" (confirm the user means this), "burn-in", "equilibration" without saying it is discarded |
 
 ## Model structure

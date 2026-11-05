@@ -14,7 +14,7 @@ Use these headings, in this order. Omit nothing; write "None" for an empty secti
 
 1. **Title and phase.** Phase name and a one-line scope statement.
 2. **Inputs.** The previous report(s) this phase read, or "None (first phase)".
-3. **Settings.** A table with columns: Setting, Value, Status, Basis. Status is `settled` or `open`. Basis is `user decision`, `verified` (name the source), or `inference`. If the study area includes a gage, Settings must have a `gage_id` row (the gage's identifier, for USGS the site number) and a `gage_url` row (for USGS, `https://waterdata.usgs.gov/monitoring-location/<site number>/`), in addition to the gage name.
+3. **Settings.** A table with columns: Setting, Value, Status, Basis. Status is `settled` or `open`. Basis is `user decision`, `verified` (name the source), or `inference`. If the study area includes a gage, Settings must have a `gage_id` row (the gage's identifier, for USGS the site number) and a `gage_url` row (for USGS, `https://waterdata.usgs.gov/monitoring-location/<site number>/`), in addition to the gage name. It must also have a `gage_record` row: the data type the objective uses, its record start and end (or "ongoing"), and the date it was read. If the simulation period is not fully inside the record, say so in Limits to state.
 4. **Decisions and reasons.** One entry per decision: what was chosen, why, and whether the user accepted or changed your recommendation.
 5. **Resolved vocabulary.** Terms whose meaning was settled for this simulation (for example, a user's "last water year" resolved to explicit start and end dates). Canonical terms stay in the glossaries.
 6. **Phase-specific sections.** Defined by the phase skill.
