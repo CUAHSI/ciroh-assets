@@ -20,7 +20,7 @@ Interview a scientist until every decision needed to design a hydrologic simulat
    ```
 
 4. **Look up facts yourself.** Never ask the user for something you can find, such as model references in this repository or public gage metadata (name, location, drainage area, period of record). Ask only for decisions and for facts only the user has.
-5. **Label every fact** you state as **verified** (you read it in a source, and you name the source) or **inference** (you reasoned to it). If you cannot verify something, say so.
+5. **State the basis of every fact** you give as **verified** (you read it in a source, and you name the source) or **inference** (you reasoned to it). A choice the user made has the basis **user decision**. If you cannot verify something, say so. In tables, use a column named **Basis**.
 6. **Do not invent** model commands, configuration keys, default parameter values, data sources, or data conventions. If you do not know, say so and point to the model's manual or a domain expert.
 7. **Respect the user's decisions.** If the user declines something, record it as their decision, state the consequence plainly, and move on.
 8. **Do not save the user's simulation details** into `.ai/` or anywhere in the repository unless the user asks you to save the design.
@@ -53,7 +53,7 @@ The model is a node in the tree, opened after the other branches are settled. As
 
 1. **Spatial discretization:** lumped or gridded (distributed). Recommend one from the objective and the size of the study area (area in km², not HUC level).
 2. **Spatial resolution:** only if gridded. Ask for cell size and units, and recommend one from the basin size and the data the user has.
-3. **Model or framework:** list the options in `references/` that fit the answers above, the objective, time step, platform, and compute cost, and recommend one. Label each fact about an option verified or inference from its reference. If the user names a model with no reference, ask for its documentation.
+3. **Model or framework:** list the options in `references/` that fit the answers above, the objective, time step, platform, and compute cost, and recommend one. State the basis (verified or inference) of each fact about an option, from its reference. If the user names a model with no reference, ask for its documentation.
 
 Once chosen, load its reference and ask the branches it unlocks. These may include process models, routing, snow, and evapotranspiration, and the reference defines which apply. Confirm the model fits the objective in processes, spatial representation, scale, data needs, and compute cost.
 
@@ -65,7 +65,7 @@ Use the canonical terms in [references/glossary.md](references/glossary.md) and 
 
 The interview ends when no branch has an open question. Then:
 
-1. Give a summary of every settled decision, with each fact labeled verified or inference, and list open items (skipped questions, unverified facts, anything needing a model manual or domain expert).
+1. Give a summary of every settled decision, with the basis (user decision, verified, or inference) of each fact, and list open items (skipped questions, unverified facts, anything needing a model manual or domain expert).
 2. State the limits that apply to any result (for example uncalibrated, unvalidated, short warm-up, unverified data coverage).
 3. Ask the user to confirm the summary.
 
