@@ -34,8 +34,8 @@ Work through these top-level branches. Skip any the user has already answered, a
 | Branch             | Decide                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | Objective          | The process and question (streamflow at a gage, runoff, soil moisture, flood routing). A gage is a location anchor, not an objective. |
-| Study area         | Basin, gage, outlet, or region, and how upstream units are determined.                                                                |
-| Period             | Start and end dates, and warm-up (none, short, full cycle).                                                                           |
+| Study area         | Basin, gage, outlet, or region, and how upstream units are determined. If there is a gage, look up its ID (for USGS, the site number) and its USGS page link.                          |
+| Period             | Start and end dates, and spin-up (none, short, full cycle).                                                                           |
 | Time               | Time step and the time zone of any data the user brings.                                                                              |
 | Existing materials | Domain, forcing, parameters, or configuration the user already has.                                                                   |
 | Intent             | Where it will run, how results will be judged, and baseline run or calibration.                                                       |
@@ -66,7 +66,7 @@ Use the canonical terms in [references/glossary.md](references/glossary.md) and 
 The interview ends when no branch has an open question. Then:
 
 1. Give a summary of every settled decision, with the basis (user decision, verified, or inference) of each fact, and list open items (skipped questions, unverified facts, anything needing a model manual or domain expert).
-2. State the limits that apply to any result (for example uncalibrated, unvalidated, short warm-up, unverified data coverage).
+2. State the limits that apply to any result (for example uncalibrated, unvalidated, short spin-up, unverified data coverage).
 3. Ask the user to confirm the summary.
 
 Do not produce a work plan before the user confirms. After confirmation, write the report using [references/report-template.md](references/report-template.md), which also defines when it may be saved. Each design-tree branch above becomes Settings rows in the report, and the limits from step 2 go in its Limits to state section.

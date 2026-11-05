@@ -14,12 +14,12 @@ Use these headings, in this order. Omit nothing; write "None" for an empty secti
 
 1. **Title and phase.** Phase name and a one-line scope statement.
 2. **Inputs.** The previous report(s) this phase read, or "None (first phase)".
-3. **Settings.** A table with columns: Setting, Value, Status, Basis. Status is `settled` or `open`. Basis is `user decision`, `verified` (name the source), or `inference`.
+3. **Settings.** A table with columns: Setting, Value, Status, Basis. Status is `settled` or `open`. Basis is `user decision`, `verified` (name the source), or `inference`. If the study area includes a gage, Settings must have a `gage_id` row (the gage's identifier, for USGS the site number) and a `gage_url` row (for USGS, `https://waterdata.usgs.gov/monitoring-location/<site number>/`), in addition to the gage name.
 4. **Decisions and reasons.** One entry per decision: what was chosen, why, and whether the user accepted or changed your recommendation.
 5. **Resolved vocabulary.** Terms whose meaning was settled for this simulation (for example, a user's "last water year" resolved to explicit start and end dates). Canonical terms stay in the glossaries.
 6. **Phase-specific sections.** Defined by the phase skill.
 7. **Open items.** Skipped questions, unverified facts, and anything needing a model manual or domain expert.
-8. **Limits to state.** Limits on any result, for example uncalibrated, unvalidated, short warm-up, unverified data coverage.
+8. **Limits to state.** Limits on any result, for example uncalibrated, unvalidated, short spin-up, unverified data coverage.
 9. **Flow.** A mermaid flowchart of how the phase's decisions connect. Write "None" only if the phase has fewer than two connected decisions.
 10. **Settings (YAML).** The same settings as the table, for the next phase to read.
 

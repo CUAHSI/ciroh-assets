@@ -27,7 +27,7 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 | Parameter          | A value that controls how a process behaves. It may be calibrated, defaulted, or derived from attributes.                       | "Setting", "variable"                                     |
 | State              | A stored quantity that evolves during the run, such as soil moisture.                                                           | "Parameter", "variable"                                   |
 | Initial condition  | The state values at the start of the simulation.                                                                                | "Starting data", "defaults"                               |
-| Spin-up (warm-up)  | A period run before the evaluation period so states can adjust away from the initial conditions. Results from it are discarded. | "Burn-in", "equilibration" without saying it is discarded |
+| Spin-up            | A period run before the evaluation period so states can adjust away from the initial conditions. Results from it are discarded. | "Warm-up" (confirm the user means this), "burn-in", "equilibration" without saying it is discarded |
 
 ## Model structure
 
@@ -42,7 +42,7 @@ Scope: terms are model-agnostic and do not assume any model or modeling framewor
 
 | Term                            | Definition                                                                                                 | Avoid                                        |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| Simulation period               | Start and end times of the run, including warm-up.                                                         | "Dates" without saying which                 |
+| Simulation period               | Start and end times of the run, including spin-up.                                                         | "Dates" without saying which                 |
 | Evaluation period               | The part of the simulation period used to judge results.                                                   | "Run period"                                 |
 | Time step (temporal resolution) | The interval at which the model advances.                                                                  | "Resolution" for time alone                  |
 | Time zone                       | The time convention of timestamps. Always state it; convert, do not strip it.                              | "Local time" without a zone                  |
