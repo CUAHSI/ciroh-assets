@@ -14,18 +14,19 @@ Use these headings, in this order. Omit nothing; write "None" for an empty secti
 
 1. **Title and phase.** Phase name and a one-line scope statement.
 2. **Inputs.** The previous report(s) this phase read, or "None (first phase)".
-3. **Settings.** A table with columns: Setting, Value, Status, Basis. Status is `settled` or `open`. Basis is `user decision`, `verified` (name the source), or `inference`. If the study area includes a gage, Settings must have a `gage_id` row (the gage's identifier, for USGS the site number) and a `gage_url` row (for USGS, `https://waterdata.usgs.gov/monitoring-location/<site number>/`), in addition to the gage name. It must also have a `gage_record` row: the data type the objective uses, its record start and end (or "ongoing"), and the date it was read. If the simulation period is not fully inside the record, say so in Limits to state.
-4. **Decisions and reasons.** One entry per decision: what was chosen, why, and whether the user accepted or changed your recommendation.
-5. **Resolved vocabulary.** Terms whose meaning was settled for this simulation (for example, a user's "last water year" resolved to explicit start and end dates). Canonical terms stay in the glossaries.
-6. **Phase-specific sections.** Defined by the phase skill.
-7. **Open items.** Skipped questions, unverified facts, and anything needing a model manual or domain expert.
-8. **Limits to state.** Limits on any result, for example uncalibrated, unvalidated, short spin-up, unverified data coverage.
-9. **Flow.** A mermaid flowchart of how the phase's decisions connect. Write "None" only if the phase has fewer than two connected decisions.
-10. **Settings (YAML).** The same settings as the table, for the next phase to read.
+3. **Settings.** A table of model decisions with columns: Setting, Value, Status, Basis. Status is `settled` or `open`. Basis is `user decision`, `verified` (name the source), or `inference`. A value you recommended and the user accepted is a `user decision`; if it came from a reference file, name that file in `source`. Observation details do not go here. If the simulation is anchored to a location (for example a gage), Settings has an `outlet` row naming it and the observation key (for example "East River at Almont (`usgs-09112500`)"), and an `evaluation` row that names the same key.
+4. **Observations.** One entry per observation source (gage, snow station, remote-sensing product, or user data), in a table with columns: Key, Type, Name, ID, URL, Variable, Record start, Record end (or "ongoing"), Date read, Serves, Basis. Key is a short unique label (for example `usgs-09112500`). Serves names the Settings rows that use the entry (for example `outlet`, `evaluation`). For a USGS gage, ID is the site number and URL is `https://waterdata.usgs.gov/monitoring-location/<site number>/`. If the simulation period is not fully inside a record, say so in Limits to state. If this section passes 5 entries or about 40 lines, move it to `observations.md` next to the report, keep one `observations_file` row in Settings with its path, and write "See `observations.md`" here.
+5. **Decisions and reasons.** One entry per decision: what was chosen, why, and whether the user accepted or changed your recommendation.
+6. **Resolved vocabulary.** Terms whose meaning was settled for this simulation (for example, a user's "last water year" resolved to explicit start and end dates). Canonical terms stay in the glossaries.
+7. **Phase-specific sections.** Defined by the phase skill.
+8. **Open items.** Skipped questions, unverified facts, and anything needing a model manual or domain expert.
+9. **Limits to state.** Limits on any result, for example uncalibrated, unvalidated, short spin-up, unverified data coverage.
+10. **Flow.** A mermaid flowchart of how the phase's decisions connect. Write "None" only if the phase has fewer than two connected decisions.
+11. **Settings (YAML).** The same settings as the table, plus the observations, for the next phase to read.
 
 ## Settings YAML
 
-One block, identical in content to the Settings table.
+One block, identical in content to the Settings table and the Observations section.
 
 ```yaml
 phase: <phase name>
@@ -34,12 +35,26 @@ settings:
     value: <value>
     status: settled # settled | open
     basis: user decision # user decision | verified | inference
+    source: <where it was read; required for verified, optional for a user decision taken from a reference>
+observations: # omit when moved to observations.md
+  <key>:
+    type: <gage | snow station | remote sensing | user data>
+    name: <name>
+    id: <identifier>
+    url: <link>
+    variable: <data type>
+    record_start: <date>
+    record_end: <date | ongoing>
+    date_read: <date>
+    serves: [<setting_name>]
+    basis: verified # user decision | verified | inference
     source: <where it was read, for verified only>
 ```
 
 Rules:
 
-- Every table row has exactly one YAML entry, and the reverse.
+- Every Settings table row has exactly one YAML setting, and the reverse. Every Observations entry has exactly one YAML entry under `observations`, and the reverse.
+- An observation key used in a Settings value must exist in Observations.
 - Use `null` for the value and basis of an `open` setting.
 - A setting with basis `inference` is never `settled`.
 - Do not add settings that are not in the table.

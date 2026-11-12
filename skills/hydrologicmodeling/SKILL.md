@@ -34,7 +34,7 @@ Work through these top-level branches. Skip any the user has already answered, a
 | Branch             | Decide                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | Objective          | The process and question (streamflow at a gage, runoff, soil moisture, flood routing). A gage is a location anchor, not an objective. |
-| Study area         | Basin, gage, outlet, or region, and how upstream units are determined. If there is a gage, look up its ID (for USGS, the site number), its USGS page link, and the record dates for the data type the objective uses.                          |
+| Study area         | Basin, gage, outlet, or region, and how upstream units are determined. If there is a gage, look up its ID (for USGS, the site number), its USGS page link, and the record dates for the data type the objective uses. These details go in the report's Observations section, not its Settings.                          |
 | Period             | Start and end dates, and spin-up (none, short, full cycle). If there is a gage, compare the dates with its record and tell the user if the period falls outside it. |
 | Time               | Time step and the time zone of any data the user brings.                                                                              |
 | Existing materials | Domain, forcing, parameters, or configuration the user already has.                                                                   |
