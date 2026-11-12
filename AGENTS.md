@@ -52,7 +52,7 @@ Rules for these files:
 
 ## Testing the skill
 
-When asked to test a skill, read `skills/<skill>/SKILL.md` and use only content inside `skills/<skill>/`. Do not reference anything outside that directory unless the user says to. For a stage after the first, the input is the previous stage's report. Test each stage skill as it is built, and rerun at least one stage transcript after changing a shared reference.
+When asked to test a skill, read `skills/<skill>/SKILL.md` and use only content inside `skills/<skill>/`. Do not reference anything outside that directory unless the user says to. For a phase after the first, the input is the previous phase's report. Test each phase skill as it is built, and rerun at least one phase transcript after changing a shared reference.
 
 ## Adding Future Context
 
